@@ -14,7 +14,7 @@ namespace Mediator
             _id = id;
         }
 
-        public bool GetIsInTheAir()
+        public bool IsInTheAir()
         {
             return _isInTheAir;
         }

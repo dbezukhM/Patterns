@@ -1,6 +1,6 @@
 ﻿namespace Memento
 {
-    public class Caretaker<T> : IMemento<T>
+    public class Caretaker<T> : IMemento<T> where T : struct
     {
         private T _state;
 

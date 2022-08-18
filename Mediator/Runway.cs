@@ -13,7 +13,7 @@ namespace Mediator
             _isAvailable = isAvailable;
         }
 
-        public bool GetIsAvailable()
+        public bool IsAvailable()
         {
             return _isAvailable;
         }

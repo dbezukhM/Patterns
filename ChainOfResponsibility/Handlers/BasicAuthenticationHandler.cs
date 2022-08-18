@@ -7,16 +7,12 @@ namespace ChainOfResponsibility.Handlers
     {
         private const string Type = "Basic";
 
-        public BasicAuthenticationHandler(AuthenticationHandler next) : base(next)
-        {
-        }
-
-        public override Response handleRequest(string requestType)
+        public override Response HandleRequest(string requestType)
         {
             if (requestType == Type)
                 return SomeAction();
             else
-                return base.handleRequest(requestType);
+                return base.HandleRequest(requestType);
         }
 
         private Response SomeAction()

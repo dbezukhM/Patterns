@@ -29,7 +29,7 @@ namespace Mediator
 
         public void TakeOff()
         {
-            if (!_plane.GetIsInTheAir() && _runway.GetIsAvailable())
+            if (!_plane.IsInTheAir() && _runway.IsAvailable())
             {
                 Console.WriteLine($"Plane {_plane.GetId()} is taking off...");
                 _planesOnGround.RemovePlane(_plane);

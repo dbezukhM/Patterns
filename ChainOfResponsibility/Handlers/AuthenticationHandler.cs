@@ -4,16 +4,17 @@ namespace ChainOfResponsibility.Handlers
 {
     public abstract class AuthenticationHandler
     {
-        private readonly AuthenticationHandler _next;
+        private AuthenticationHandler _next;
 
-        protected AuthenticationHandler(AuthenticationHandler next)
+        public AuthenticationHandler SetNext(AuthenticationHandler next)
         {
             _next = next;
+            return next;
         }
 
-        public virtual Response handleRequest(string requestType)
+        public virtual Response HandleRequest(string requestType)
         {
-            return _next?.handleRequest(requestType);
+            return _next?.HandleRequest(requestType);
         }
     }
 }

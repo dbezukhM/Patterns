@@ -2,7 +2,7 @@
 {
     public class OrderHandler
     {
-        public void invoke(Command command)
+        public void Invoke(Command command)
         {
             command.Execute();
         }

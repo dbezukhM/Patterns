@@ -8,13 +8,12 @@ namespace ChainOfResponsibility
     {
         static void Main(string[] args)
         {
-            AuthenticationHandler chain =
-                new BasicAuthenticationHandler(
-                    new ClientCertificateAuthenticationHandler(new DigestAuthenticationHandler(null)));
+            AuthenticationHandler chain = new BasicAuthenticationHandler();
+            chain.SetNext(new ClientCertificateAuthenticationHandler()).SetNext(new DigestAuthenticationHandler());
 
-            var response1 = chain.handleRequest("ClientCertificate");
-            var response2 = chain.handleRequest("Diges");
-            var response3 = chain.handleRequest("Basic");
+            var response1 = chain.HandleRequest("ClientCertificate");
+            var response2 = chain.HandleRequest("Digest");
+            var response3 = chain.HandleRequest("Basic");
 
             Console.WriteLine(response1?.Answer);
             Console.WriteLine(response2?.Answer);

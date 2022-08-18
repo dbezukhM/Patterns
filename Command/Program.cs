@@ -13,8 +13,8 @@ namespace Command
             OrderHandler placeOrderHandler = new OrderHandler();
             OrderHandler returnOrderHandler = new OrderHandler();
 
-            placeOrderHandler.invoke(new PlaceOrderCommand(jacket));
-            returnOrderHandler.invoke(new ReturnOrderCommand(jacket));
+            placeOrderHandler.Invoke(new PlaceOrderCommand(jacket));
+            returnOrderHandler.Invoke(new ReturnOrderCommand(jacket));
         }
     }
 }
